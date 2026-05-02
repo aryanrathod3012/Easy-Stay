@@ -1,0 +1,40 @@
+{
+  "name": "ChatMessage",
+  "type": "object",
+  "properties": {
+    "pg_id": {
+      "type": "string",
+      "description": "ID of the PG listing this chat belongs to"
+    },
+    "conversation_id": {
+      "type": "string",
+      "description": "Unique ID for user-owner conversation: pg_id + user_email"
+    },
+    "sender_email": {
+      "type": "string",
+      "description": "Email of the message sender"
+    },
+    "sender_name": {
+      "type": "string",
+      "description": "Display name of sender"
+    },
+    "sender_role": {
+      "type": "string",
+      "enum": [
+        "user",
+        "owner"
+      ],
+      "description": "Role of the sender"
+    },
+    "text": {
+      "type": "string",
+      "description": "Message content"
+    }
+  },
+  "required": [
+    "pg_id",
+    "conversation_id",
+    "sender_email",
+    "text"
+  ]
+}
