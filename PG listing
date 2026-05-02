@@ -1,0 +1,141 @@
+{
+  "name": "PGListing",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Name of the PG/Hostel"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description"
+    },
+    "owner_email": {
+      "type": "string",
+      "description": "Email of the PG owner"
+    },
+    "owner_name": {
+      "type": "string",
+      "description": "Name of the PG owner"
+    },
+    "gender_type": {
+      "type": "string",
+      "enum": [
+        "boys",
+        "girls",
+        "unisex"
+      ],
+      "description": "Gender availability"
+    },
+    "price_per_month": {
+      "type": "number",
+      "description": "Monthly rent in INR"
+    },
+    "deposit": {
+      "type": "number",
+      "description": "Security deposit in INR"
+    },
+    "food_charges": {
+      "type": "number",
+      "description": "Monthly food charges in INR (0 if not included)"
+    },
+    "electricity_charges": {
+      "type": "string",
+      "enum": [
+        "included",
+        "extra"
+      ],
+      "description": "Electricity charges policy"
+    },
+    "amenities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of amenities like WiFi, AC, Laundry etc"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "House rules declared by owner"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of image URLs"
+    },
+    "address": {
+      "type": "string",
+      "description": "Full address"
+    },
+    "city": {
+      "type": "string",
+      "description": "City name"
+    },
+    "area": {
+      "type": "string",
+      "description": "Area/locality name"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Latitude coordinate"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Longitude coordinate"
+    },
+    "total_rooms": {
+      "type": "number",
+      "description": "Total rooms available"
+    },
+    "available_rooms": {
+      "type": "number",
+      "description": "Currently available rooms"
+    },
+    "room_type": {
+      "type": "string",
+      "enum": [
+        "single",
+        "double",
+        "triple",
+        "dormitory"
+      ],
+      "description": "Type of room"
+    },
+    "average_rating": {
+      "type": "number",
+      "description": "Average rating (1-5)"
+    },
+    "total_reviews": {
+      "type": "number",
+      "description": "Total number of reviews"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Admin approval status"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Featured listing flag"
+    }
+  },
+  "required": [
+    "title",
+    "owner_email",
+    "gender_type",
+    "price_per_month",
+    "address",
+    "city"
+  ]
+}
