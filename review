@@ -1,0 +1,31 @@
+{
+  "name": "Review",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the reviewer"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Name of the reviewer"
+    },
+    "pg_id": {
+      "type": "string",
+      "description": "ID of the PG listing"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Rating from 1 to 5"
+    },
+    "comment": {
+      "type": "string",
+      "description": "Review text"
+    }
+  },
+  "required": [
+    "user_email",
+    "pg_id",
+    "rating"
+  ]
+}
