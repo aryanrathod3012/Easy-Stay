@@ -1,0 +1,80 @@
+{
+  "name": "Booking",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user who booked"
+    },
+    "user_name": {
+      "type": "string",
+      "description": "Name of the user"
+    },
+    "pg_id": {
+      "type": "string",
+      "description": "ID of the PG listing"
+    },
+    "pg_title": {
+      "type": "string",
+      "description": "Title of the PG"
+    },
+    "owner_email": {
+      "type": "string",
+      "description": "Email of the PG owner"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Total amount paid by user"
+    },
+    "commission": {
+      "type": "number",
+      "description": "Platform commission (2%)"
+    },
+    "owner_amount": {
+      "type": "number",
+      "description": "Amount owner receives (98%)"
+    },
+    "check_in_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Check-in date"
+    },
+    "duration_months": {
+      "type": "number",
+      "description": "Stay duration in months"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "confirmed",
+        "cancelled",
+        "completed",
+        "payment_held"
+      ],
+      "default": "payment_held",
+      "description": "Booking status"
+    },
+    "payment_released": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether payment has been released to owner"
+    },
+    "cancellation_deadline": {
+      "type": "string",
+      "format": "date-time",
+      "description": "48h deadline for free cancellation"
+    },
+    "cancelled_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the booking was cancelled"
+    }
+  },
+  "required": [
+    "user_email",
+    "pg_id",
+    "pg_title",
+    "amount",
+    "status"
+  ]
+}
